@@ -13,7 +13,7 @@ async function editfile(e:any,filename:any,open:any){
        
       
        if(filename1&&description){
-        const req=await fetch(`https://backend-kappa-nine-38.vercel.app/rename/${filename.filename}/${filename1+'.'+filenamewithext[1]}/${description}`,{
+        const req=await fetch(`https://backend3-r009.onrender.com/rename/${filename.filename}/${filename1+'.'+filenamewithext[1]}/${description}`,{
             method:"put"
         })
         const data=await req.json()
