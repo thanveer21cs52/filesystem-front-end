@@ -8,7 +8,7 @@ import { GiCancel } from "react-icons/gi";
 
 
 function Upload({refetch}:{refetch:any}) {
-   const [ustate,setustate]=usestate(false)
+   const [ustate,setustate]=useState(false)
    function handlefile(e: any) {
     const files = e.target.files?.[0];
     if (files) {
