@@ -16,7 +16,7 @@ import { MdDescription } from "react-icons/md";
 function List({fetchdata,filename,open}:{fetchdata:any,filename:any,open:any}) {
     const [file,setfile]=useState<any[]>([])
     async function fetchfiles(){
-        const req=await fetch('https://backend-kappa-nine-38.vercel.app/files',{
+        const req=await fetch('https://backend3-r009.onrender.com/files',{
             cache:"no-cache"
         })
         const data=await req.json()
@@ -34,7 +34,7 @@ function List({fetchdata,filename,open}:{fetchdata:any,filename:any,open:any}) {
        const name= window.prompt("file name",filenamewithext[0])
       
        if(name){
-        const req=await fetch(`https://backend-kappa-nine-38.vercel.app/rename/${filename}/${name+'.'+filenamewithext[1]}`,{
+        const req=await fetch(`https://backend3-r009.onrender.com/rename/${filename}/${name+'.'+filenamewithext[1]}`,{
             method:"put"
         })
         const data=await req.json()
@@ -51,7 +51,7 @@ function List({fetchdata,filename,open}:{fetchdata:any,filename:any,open:any}) {
     async function deletefile(filename:string){
         const confirm=window.confirm('Are want delete this file '+filename)
         if(confirm){
-            const req=await fetch(`https://backend-kappa-nine-38.vercel.app/delete/${filename}`,{
+            const req=await fetch(`https://backend3-r009.onrender.com/delete/${filename}`,{
             method:"delete"
         })
         const data=await req.json()
@@ -70,7 +70,7 @@ function List({fetchdata,filename,open}:{fetchdata:any,filename:any,open:any}) {
   
 async function downloadFile(filename: string) {
   try {
-    const response = await fetch(`https://backend-kappa-nine-38.vercel.app/download/${filename}`, {
+    const response = await fetch(`https://backend3-r009.onrender.com/download/${filename}`, {
       method: "GET",
     });
 
@@ -127,7 +127,7 @@ async function downloadFile(filename: string) {
         <td className="border border-blue-300 px-2 py-2">
           <div className="flex justify-center items-center space-x-2">
             
-                <a href={`https://backend-kappa-nine-38.vercel.app/download/${file.filepath}`} download={true}>
+                <a href={`https://backend3-r009.onrender.com/download/${file.filepath}`} download={true}>
                 <button
               type="button"
               className="bg-green-400 p-2 rounded-xs font-bold"
