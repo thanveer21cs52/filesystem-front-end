@@ -127,7 +127,7 @@ async function downloadFile(filename: string) {
         <td className="border border-blue-300 px-2 py-2">
           <div className="flex justify-center items-center space-x-2">
             
-                <a href={`https://backend3-r009.onrender.com/download/${file.filepath}`} download={true}>
+                <a href={`https://backend3-r009.onrender.com/download/${file.filename}`} download={true}>
                 <button
               type="button"
               className="bg-green-400 p-2 rounded-xs font-bold"
