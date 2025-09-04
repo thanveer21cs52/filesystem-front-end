@@ -8,6 +8,7 @@ import { GiCancel } from "react-icons/gi";
 
 
 function Upload({refetch}:{refetch:any}) {
+   const [ustate,setustate]=usestate(false)
    function handlefile(e: any) {
     const files = e.target.files?.[0];
     if (files) {
@@ -17,6 +18,7 @@ function Upload({refetch}:{refetch:any}) {
 }
 
     async function handlesubmit(e:any){
+       setustate(true)
         e.preventDefault()
         setlooding(true)
         const desc=e.target?.description.value
@@ -41,6 +43,7 @@ function Upload({refetch}:{refetch:any}) {
         alert("upload successfully")
         setfile(null)
         setlooding(false)
+         setustate(false)
         
       }
     } catch (err) {
@@ -91,7 +94,7 @@ function Upload({refetch}:{refetch:any}) {
         <label htmlFor="desc" className=" w-full  focus:outline-none flex gap-3 items-center "><span className="font-bold text-sm">Description: </span><input type="text"  name='description' className="border border-blue w-3/4 p-1 py-2 focus:outline-none bg-amber-50 text-black rounded-sm " id="desc"/></label>
        <div className="flex justify-evenly space-x-2"> 
         <button type="submit" className="bg-red-500 p-2 rounded-xs font-bold  w-1/2  flex justify-center items-center gap-1 " onClick={()=>setfile(null)}> <GiCancel/>Close</button>
-             <button type="submit" className="bg-blue-500 p-2 rounded-xs font-bold w-1/2 flex justify-center items-center gap-1"><FiUpload />upload</button>
+             <button type="submit" className="bg-blue-500 p-2 rounded-xs font-bold w-1/2 flex justify-center items-center gap-1" disable={ustate}><FiUpload />upload</button>
         
 
        </div>
