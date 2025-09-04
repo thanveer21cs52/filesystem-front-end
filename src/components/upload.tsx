@@ -30,7 +30,7 @@ function Upload({refetch}:{refetch:any}) {
 
 
     try {
-      const res = await fetch("https://backend-kappa-nine-38.vercel.app/upload", {
+      const res = await fetch("https://backend3-r009.onrender.com/upload", {
         method: "POST",
         body: formData,
       });
