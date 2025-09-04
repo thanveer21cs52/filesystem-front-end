@@ -114,7 +114,7 @@ async function downloadFile(filename: string) {
       <tr key={file.id} className="">
      
         <td className="border border-blue-300 px-2 py-2 ">
-            <span className="flex gap-0.5 items-center"> <FaFile className="text-amber-100" />{file.filename}</span>
+            <span className="flex gap-0.5 items-center"> <FaFile className="text-amber-100" />{file.filepath}</span>
          
         </td>
 
