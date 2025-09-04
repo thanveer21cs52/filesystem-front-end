@@ -114,7 +114,7 @@ async function downloadFile(filename: string) {
       <tr key={file.id} className="">
      
         <td className="border border-blue-300 px-2 py-2 ">
-            <span className="flex gap-0.5 items-center"> <FaFile className="text-amber-100" />{file.filepath}</span>
+            <span className="flex gap-0.5 items-center"> <FaFile className="text-amber-100" />{file.filename}</span>
          
         </td>
 
@@ -127,7 +127,7 @@ async function downloadFile(filename: string) {
         <td className="border border-blue-300 px-2 py-2">
           <div className="flex justify-center items-center space-x-2">
             
-                <a href={`https://backend-kappa-nine-38.vercel.app/download/${file.filename}`} download={true}>
+                <a href={`https://backend-kappa-nine-38.vercel.app/download/${file.filepath}`} download={true}>
                 <button
               type="button"
               className="bg-green-400 p-2 rounded-xs font-bold"
